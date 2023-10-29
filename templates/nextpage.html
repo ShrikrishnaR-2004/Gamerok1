@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/style2.css">
+    <title>GAMEROK</title>
+    <link rel="icon" type="image/x-icon" href="../static/logo.ico">
+</head>
+<body>
+    <form class="logo">
+        <a href="/"><img src="../static/bluelogo%20(2).png" ></a>
+        <a href="/" style="color: purple;text-decoration: none"><p>GAMEROK</p></a>
+        <button type="submit" onclick="window.location.href='/login';">SIGN IN</button>
+    </form>
+    </nav>
+        <header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="/">HOME</a></li>
+                <li><a href="#">IMAGES</a></li>
+                <li><a href="#">REVIEW</a></li>
+                <li><a href="">NEWS</a></li>
+                <div class="search">
+                    <input type="text" name="search" id="search" placeholder="Search">
+                    <button type="submit" value="search"><img src="../static/search.png"></button>
+                </div>
+            </ul>
+        </nav>
+    </header>
+
+    <form class="details">
+        {% for user in usr %}
+            {% if user | length  %}
+                <p>{{ user.Game_Name }}</p><br>
+                <p>Prdouction: {{ user.Production }}</p><br>
+                <p>Description: {{ user.Description }}</p><br>
+                <p>Reviews: {{ user.Reviews }}</p><br>
+                <p>Platform: {{ user.Platform }}</p><br>
+                <p>System Requirements: {{ user.Requirements }}</p><br>
+                <p>Wikipedia: <a href="{{ user.Learn_more }}">{{ user.Learn_more }}</a></p><br>
+                <p>Playthrough Hours:{{ user.Playthrough_hours }}</p>
+            {% else %}
+                <p>404</p>
+            {% endif %}
+        {% endfor %}
+    </form>
+
+
+</body>
+</html>

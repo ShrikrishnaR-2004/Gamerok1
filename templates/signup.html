@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/style5.css">
+    <title>SIGN-UP</title>
+    <link rel="icon" type="image/x-icon" href="../static/logo.ico">
+</head>
+<body>
+    <div class="container">
+      <div class="card">
+        <div class="card_title">
+          <h1>SIGN UP</h1>
+          <p>Create an account of your own!</p>
+        </div>
+        <div class="form">
+        <form action="/register" method="post">
+          <label>Username</label>
+            <input type="text" placeholder="Username" />
+            <br />
+            <label>Email</label>
+            <input type="email" placeholder="Email" />
+            <br />
+            <label>Password</label>
+            <input type="password" placeholder="Password" />
+            <br />
+            <label>Confirm-password</label>
+            <input type="password" placeholder="Confirm-password" />
+            <p>
+                By creating an account on this website you agree to our
+                <a href="#">Terms and Services</a>
+            </p><br />
+        </form>
+        </div>
+        <div class="signip">
+            <button>Sign Up</button>
+        </div>
+          <div class="login">
+            <br/><p>Already have an account?<a href="/login"> Login</a> </p>
+          </div>
+      </div>
+    </div>
+</body>
+</html>

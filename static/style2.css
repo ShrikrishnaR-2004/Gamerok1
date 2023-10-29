@@ -1,0 +1,105 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Bruce Forever", serif;
+}
+html{
+    scroll-behavior: smooth;
+}
+
+
+body{
+     background-image: url('wallpaper.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: 100% 100%;
+}
+
+.logo{
+    width: 100%;
+    max-width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+.logo img{
+    width: 55px;
+    height: 55px;
+    justify-items: left;
+    margin-top: 10px;
+    margin-left: 25px;
+    margin-bottom: 4px;
+}
+.logo p {
+    font-size: 40px;
+    text-align: center;
+    justify-items: center;
+    margin-top: 10px;
+    margin-bottom: 4px;
+}
+.logo button{
+    padding: 3px;
+    height: 30px;
+    justify-items: right;
+    margin-top: 20px;
+    margin-right: 25px;
+    margin-bottom: 4px;
+}
+
+.navbar{
+    background-color: black;
+    opacity: 0.5;
+    border-radius: 30px;
+
+}
+.navbar ul{
+    overflow: auto;
+        }
+.navbar li{
+    float:left;
+    list-style: none;
+    margin: 13px 20px;
+
+}
+.navbar li a{
+    padding: 3px 3px;
+    text-decoration: none;
+    color: white;
+}
+.navbar li a:hover{
+    color: red
+}
+.search{
+    float: right;
+    color: white;
+    padding: 12px 75px;
+    justify-items: right;
+}
+.navbar input{
+    border: 2px solid black;
+    border-radius: 14px;
+    justify-items: right;
+    padding: 3px 17px;
+    width: 150px;
+}
+
+.search button img{
+    height: 19px;
+    width: 25px;
+    margin-left: 2.5px;
+    margin-top: 1px;
+    display: flex;
+
+}
+
+.search button{
+    border: 0;
+    background: black;
+    height: 20px;
+    width: 25px;
+    cursor: pointer;
+}
+
+.details{
+    color: white;
+}
