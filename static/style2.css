@@ -10,7 +10,7 @@ html{
 
 
 body{
-     background-image: url('wallpaper.jpg');
+     background-image: url('frontpage.jpg');
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: 100% 100%;
@@ -101,5 +101,14 @@ body{
 }
 
 .details{
-    color: white;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+}
+.game_name{
+    justify-content: center;
+    justify-items: center;
+    font-size: 30px;
+    display: flex;
 }

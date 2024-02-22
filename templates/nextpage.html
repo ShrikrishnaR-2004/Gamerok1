@@ -9,14 +9,14 @@
 <body>
     <form class="logo">
         <a href="/"><img src="../static/bluelogo%20(2).png" ></a>
-        <a href="/" style="color: purple;text-decoration: none"><p>GAMEROK</p></a>
+        <a href="/" style="color: white;text-decoration: none"><p>GAMEROK</p></a>
         <button type="submit" onclick="window.location.href='/login';">SIGN IN</button>
     </form>
     </nav>
         <header>
         <nav class="navbar">
             <ul>
-                <li><a href="/">HOME</a></li>
+                <li><a href="#details">DETAILS</a></li>
                 <li><a href="#">IMAGES</a></li>
                 <li><a href="#">REVIEW</a></li>
                 <li><a href="">NEWS</a></li>
@@ -27,18 +27,18 @@
             </ul>
         </nav>
     </header>
-
-    <form class="details">
+<!--JINGA -->
+    <form class="details" id="details">
         {% for user in usr %}
             {% if user | length  %}
-                <p>{{ user.Game_Name }}</p><br>
+                <p class="game_name">{{ user.Game_Name }}</p><br>
                 <p>Prdouction: {{ user.Production }}</p><br>
                 <p>Description: {{ user.Description }}</p><br>
                 <p>Reviews: {{ user.Reviews }}</p><br>
-                <p>Platform: {{ user.Platform }}</p><br>
+                <p>Platform: {{ user.Platforms }}</p><br>
                 <p>System Requirements: {{ user.Requirements }}</p><br>
                 <p>Wikipedia: <a href="{{ user.Learn_more }}">{{ user.Learn_more }}</a></p><br>
-                <p>Playthrough Hours:{{ user.Playthrough_hours }}</p>
+                <p>Playthrough Hours: {{ user.Playthrough_hours }}</p>
             {% else %}
                 <p>404</p>
             {% endif %}
