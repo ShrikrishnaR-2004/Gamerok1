@@ -16,7 +16,7 @@ def search():
         users = getresult(data["search"])
     else:
         users = []
-    print(users)
+    #print(users)
 
     return render_template("nextpage.html", usr=users)
 
@@ -28,6 +28,7 @@ def list_games():
 
 
 @app.route("/login")
+@app.route("/search/login")
 def login():
     return render_template("signin.html")
 

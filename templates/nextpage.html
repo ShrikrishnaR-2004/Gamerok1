@@ -8,8 +8,8 @@
 </head>
 <body>
     <form class="logo">
-        <a href="/"><img src="../static/bluelogo%20(2).png" ></a>
-        <a href="/" style="color: white;text-decoration: none"><p>GAMEROK</p></a>
+        <a href="/"><img src="../static/logo.jpg" ></a>
+        <a href="/" style="color: skyblue;text-decoration: none"><p>GAMEROK</p></a>
         <button type="submit" onclick="window.location.href='/login';">SIGN IN</button>
     </form>
     </nav>
@@ -20,14 +20,14 @@
                 <li><a href="#">IMAGES</a></li>
                 <li><a href="#">REVIEW</a></li>
                 <li><a href="">NEWS</a></li>
-                <div class="search">
+                <form class="search" action="/search" method="post">
                     <input type="text" name="search" id="search" placeholder="Search">
                     <button type="submit" value="search"><img src="../static/search.png"></button>
-                </div>
+                </form>
             </ul>
         </nav>
     </header>
-<!--JINGA -->
+<!--JINGA2 TEMPLATE -->
     <form class="details" id="details">
         {% for user in usr %}
             {% if user | length  %}
@@ -39,8 +39,9 @@
                 <p>System Requirements: {{ user.Requirements }}</p><br>
                 <p>Wikipedia: <a href="{{ user.Learn_more }}">{{ user.Learn_more }}</a></p><br>
                 <p>Playthrough Hours: {{ user.Playthrough_hours }}</p>
-            {% else %}
-                <p>404</p>
+            {% else%}
+                <p>Sorry!! Either is not updated in the list or wrong spelling.</p><br>
+                <p>Please wait until next time for the game to be updated in the list.</p>
             {% endif %}
         {% endfor %}
     </form>
