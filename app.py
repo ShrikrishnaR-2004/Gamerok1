@@ -42,13 +42,14 @@ def signup():
 def contact():
     return render_template("contact.html")
 
-@app.route("/contact/video")
-def intro_video():
-    return render_template("intro_video.html")
 
-@app.route('/video/Gamerok.mp4')
-def video(Gamerok):
-    return send_from_directory(app.static, Gamerok.mp4)
+@app.route("/contact/video/Gamerok.mp4")
+def intro_video():
+    return render_template("intro_video.html",file=Gamerok.mp4)
+
+# @app.route('/video/Gamerok.mp4')
+# def video(Gamerok):
+#     return send_from_directory(app.static, file=Gamerok.mp4)
 
 
 

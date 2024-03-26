@@ -9,10 +9,9 @@
 
 <body>
     <div class="video-player">
-      <video
-        src="../static/gamerok.mp4"
-        class="video"
-      ></video>
+      <video>
+       <source src="{{url_for('static', filename=file)}}" type="video/mp4">
+      </video>
 
       <div class="player-controls">
         <div class="video-progress">
