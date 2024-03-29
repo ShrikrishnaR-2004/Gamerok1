@@ -10,7 +10,7 @@
     <form class="logo">
         <a href="/"><img src="../static/logo.jpg" ></a>
         <a href="/" style="color: skyblue;text-decoration: none"><p>GAMEROK</p></a>
-        <button type="submit" onclick="window.location.href='/search/login';">SIGN IN</button>
+        <button type="submit" onclick="window.location.href='/login';">SIGN IN</button>
     </form>
     </nav>
         <header>
@@ -30,7 +30,7 @@
 <!--JINGA2 TEMPLATE -->
     <form class="details" id="details">
         {% for user in usr %}
-            {% if user | length  %}
+            {% if user | length != []  %}
                 <p class="game_name">{{ user.Game_Name }}</p><br>
                 <p>Prdouction: {{ user.Production }}</p><br>
                 <p>Description: {{ user.Description }}</p><br>
@@ -39,7 +39,7 @@
                 <p>System Requirements: {{ user.Requirements }}</p><br>
                 <p>Wikipedia: <a href="{{ user.Learn_more }}">{{ user.Learn_more }}</a></p><br>
                 <p>Playthrough Hours: {{ user.Playthrough_hours }}</p>
-            {% else%}
+            {% else %}
                 <p>Sorry!! Either is not updated in the list or wrong spelling.</p><br>
                 <p>Please wait until next time for the game to be updated in the list.</p>
             {% endif %}

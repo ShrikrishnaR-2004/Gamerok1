@@ -16,7 +16,7 @@ def search():
         users = getresult(data["search"])
     else:
         users = []
-    #print(users)
+    print(users)
 
     return render_template("nextpage.html", usr=users)
 
@@ -45,11 +45,11 @@ def contact():
 
 @app.route("/contact/video/Gamerok.mp4")
 def intro_video():
-    return render_template("intro_video.html",file=Gamerok.mp4)
+    return render_template("intro_video.html",)
 
-# @app.route('/video/Gamerok.mp4')
-# def video(Gamerok):
-#     return send_from_directory(app.static, file=Gamerok.mp4)
+@app.route('/video/Gamerok.mp4')
+def video(Gamerok):
+    return send_from_directory(app.static, file=Gamerok.mp4)
 
 
 
