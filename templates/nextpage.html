@@ -16,10 +16,9 @@
         <header>
         <nav class="navbar">
             <ul>
-                <li><a href="#details">DETAILS</a></li>
-                <li><a href="#">IMAGES</a></li>
+                <li><a href="/image" method="post" value="search">IMAGES</a></li>
                 <li><a href="#">REVIEW</a></li>
-                <li><a href="">NEWS</a></li>
+                <li><a href="#">NEWS</a></li>
                 <form class="search" action="/search" method="post">
                     <input type="text" name="search" id="search" placeholder="Search">
                     <button type="submit" value="search"><img src="../static/search.png"></button>
@@ -30,7 +29,7 @@
 <!--JINGA2 TEMPLATE -->
     <form class="details" id="details">
         {% for user in usr %}
-            {% if user | length != []  %}
+            {% if user != '[]'  %}
                 <p class="game_name">{{ user.Game_Name }}</p><br>
                 <p>Prdouction: {{ user.Production }}</p><br>
                 <p>Description: {{ user.Description }}</p><br>
@@ -39,7 +38,7 @@
                 <p>System Requirements: {{ user.Requirements }}</p><br>
                 <p>Wikipedia: <a href="{{ user.Learn_more }}">{{ user.Learn_more }}</a></p><br>
                 <p>Playthrough Hours: {{ user.Playthrough_hours }}</p>
-            {% else %}
+            {% elif user == '[]' %}
                 <p>Sorry!! Either is not updated in the list or wrong spelling.</p><br>
                 <p>Please wait until next time for the game to be updated in the list.</p>
             {% endif %}

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <<meta charset="UTF-8">
+    <link rel="stylesheet" href="../static/style2.css">
+    <title>GAMEROK</title>
+    <link rel="icon" type="image/x-icon" href="../static/logo.ico">
+</head>
+<body>
+    <form class="logo">
+        <a href="/"><img src="../static/logo.jpg" ></a>
+        <a href="/" style="color: skyblue;text-decoration: none"><p>GAMEROK</p></a>
+        <button type="submit" onclick="window.location.href='/login';">SIGN IN</button>
+    </form>
+    </nav>
+        <header>
+        <nav class="navbar">
+            <ul>
+                <li><a href="/search" methods="post" value="search">DETAILS</a></li>
+                <li><a href="#">REVIEW</a></li>
+                <li><a href="#">NEWS</a></li>
+                <form class="search" action="/search" method="post">
+                    <input type="text" name="search" id="search" placeholder="Search">
+                    <button type="submit" value="search"><img src="../static/search.png"></button>
+                </form>
+            </ul>
+        </nav>
+    </header>
+<main>
+  <section id="imgs" class="pt-5">
+    <div class="container">
+      <div class="row g-4" id="inputResults">
+        {% if searchResult %}
+		  {% for image in searchResult.results %}
+			  <div class="col-md-6 col-lg-4">
+				<div class="card searchImg">
+				<div id="cardImg">
+				   <img
+					src="{{image.urls.small}}"
+					class="card-img-top"
+					alt=""
+					/></div>
+				   <div class="card-body">
+					<a
+					  href=""
+					  class="card-text"
+					  target="_blank"
+					  rel="noopener"
+					  ></a
+					>
+				   </div>
+				 </div>
+			  </div>
+		  {% endfor %}
+       {% endif %}
+	</div>
+   </div>
+  </section>
+</main>
+
+</body>
+</html>

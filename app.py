@@ -1,21 +1,24 @@
 from flask import Flask, render_template, request, jsonify, send_from_directory
 from database import load_games_from_db, getresult
+import sys
+import os
+import requests
 
 app = Flask(__name__)
 app.static = 'static'
-
+app.secret_key = '1234567890'
 @app.route("/")
 def index():
     return render_template("index.html")
 
 
-@app.route("/search", methods=["POST"])
+@app.route("/search/<search>", methods=["POST"])
 def search():
     if request.method == "POST":
         data = request.form
         users = getresult(data["search"])
-    else:
-        users = []
+    # else:
+    #     users = "Sorry!! Either is not updated in the list or wrong spelling Please wait until next time for the game to be updated in the list."
     print(users)
 
     return render_template("nextpage.html", usr=users)
@@ -28,7 +31,7 @@ def list_games():
 
 
 @app.route("/login")
-@app.route("/search/login")
+@app.route("/search#/login")
 def login():
     return render_template("signin.html")
 
@@ -51,7 +54,22 @@ def intro_video():
 def video(Gamerok):
     return send_from_directory(app.static, file=Gamerok.mp4)
 
-
+@app.route("/image", methods=['GET', 'POST'])
+def image():
+    searchResult = ''
+    message = ''
+    searchQuery = ''
+    clientId = 'y4i-BtdyHO0mBSE7BhqVPgCBFhqbaTtruS9oZmyKMho'
+    if request.method == 'POST':
+        searchQuery = str(request.form['searchQuery'])
+        if searchQuery:
+            apiUrl = 'https://api.unsplash.com/search/photos'
+            params = {'query': searchQuery, 'client_id': clientId}
+            response = requests.get(apiUrl, params=params, allow_redirects=True)
+            searchResult = response.json()
+        else:
+            message = 'Please enter search keyword'
+    return render_template('image.html', message = message, searchQuery = searchQuery,searchResult = searchResult)
 
 if __name__ == "__main__":
     app.run('localhost', debug=True)
