@@ -37,8 +37,11 @@
                 <p>Platform: {{ user.Platforms }}</p><br>
                 <p>System Requirements: {{ user.Requirements }}</p><br>
                 <p>Wikipedia: <a href="{{ user.Learn_more }}">{{ user.Learn_more }}</a></p><br>
-                <p>Playthrough Hours: {{ user.Playthrough_hours }}</p>
-            {% elif user == '[]' %}
+                <p>Playthrough Hours: {{ user.Playthrough_hours }}</p><br>
+                <p>Geunie Site: <a href="{{ user.Org_sit1 }}">{{ user.org_sit1 }}</a></p><br>
+                <p>Crack site: <a href="{{ user.Notorg_sit1 }}">{{ user.notorg_sit1 }}</a></p><br>
+                <p>Walkthrough: <a href="{{ user.Walkthrough }}">{{ user.Walkthrough }}</a></p>
+            {% else %}
                 <p>Sorry!! Either is not updated in the list or wrong spelling.</p><br>
                 <p>Please wait until next time for the game to be updated in the list.</p>
             {% endif %}

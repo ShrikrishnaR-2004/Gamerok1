@@ -38,7 +38,9 @@ class games(Base):
     Requirements = sqlalchemy.Column(sqlalchemy.String(500))
     Learn_more = sqlalchemy.Column(sqlalchemy.String(500))
     Playthrough_hours= sqlalchemy.Column(sqlalchemy.INTEGER)
-
+    org_sit1= sqlalchemy.Column(sqlalchemy.String(100))
+    notorg_sit1= sqlalchemy.Column(sqlalchemy.String(100))
+    Walkthrough=sqlalchemy.Column(sqlalchemy.String(100))
 
 Session = sessionmaker(bind=engine)
 session = Session()

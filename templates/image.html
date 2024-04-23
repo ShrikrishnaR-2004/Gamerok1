@@ -30,13 +30,13 @@
   <section id="imgs" class="pt-5">
     <div class="container">
       <div class="row g-4" id="inputResults">
-        {% if searchResult %}
-		  {% for image in searchResult.results %}
+        {% if image %}
+		  {% for images in image %}
 			  <div class="col-md-6 col-lg-4">
 				<div class="card searchImg">
 				<div id="cardImg">
 				   <img
-					src="{{image.urls.small}}"
+					src="{{images.urls.small}}"
 					class="card-img-top"
 					alt=""
 					/></div>
